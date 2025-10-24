@@ -1,123 +1,77 @@
-# 🔫🎒 Desafio Código da Ilha – Edição Free Fire
+# 🏗️ Torre de Fuga — Desafio Final de Algoritmos
 
-Bem-vindo ao **Desafio Código da Ilha – Edição Free Fire!**  
-Neste desafio, você irá simular o gerenciamento de um **inventário de sobrevivência** em uma ilha misteriosa, utilizando a linguagem **C**.
-
-A empresa **MateCheck** encarregou você de desenvolver o sistema de **mochila virtual** que ajudará os sobreviventes a se prepararem para escapar da ilha.  
-O desafio é dividido em três níveis: **Novato**, **Aventureiro** e **Mestre**, cada um com mais complexidade e poder.
-
-
-## 🎮 Nível Novato: Inventário Básico
-
-### 🚩 Objetivo
-
-Criar um programa em C com as seguintes funcionalidades:
-
-- Adicionar itens à mochila (**nome**, **tipo** e **quantidade**)
-- Remover itens pelo nome
-- Listar os itens cadastrados
-
-### ⚙️ Funcionalidades
-
-- Utilização de `struct` para representar cada item
-- Vetor estático com capacidade para até **10 itens**
-- Leitura e escrita via terminal (`scanf`, `printf`)
-- Menu interativo com `switch` e `do-while`
-
-### 🧠 Simplicidade
-
-- Sem ordenações, buscas especializadas ou uso de ponteiros
-- Ideal para praticar manipulação básica de estruturas e arrays
-
-### 📥 Entrada
-
-O usuário escolhe ações no menu e preenche os dados dos itens conforme solicitado.
-
-### 📤 Saída
-
-O programa exibe os dados organizados em formato de tabela, com nome, tipo e quantidade.
-
-
-
-## 🛡️ Nível Aventureiro: Mochila com Busca
-
-### 🆕 Diferenças em relação ao Nível Novato
-
-- Implementação de **busca sequencial** por nome
-- Novidade no menu: opção de **"Buscar item por nome"**
-- Exibição detalhada do item encontrado
-
-### ⚙️ Funcionalidades
-
-- O usuário pode procurar qualquer item já inserido
-- Se encontrado, o programa exibe seus atributos
-- Caso contrário, exibe mensagem de erro amigável
-
-### 💡 Conceitos Adicionados
-
-- **Busca sequencial**
-- **Comparação de strings** (`strcmp`)
-- **Controle com flag** para indicar se item foi encontrado
-
-### 📥 Entrada
-
-O usuário digita o nome do item que deseja buscar.
-
-### 📤 Saída
-
-- Detalhes completos do item (nome, tipo, quantidade)
-- Ou uma mensagem de erro, se não for encontrado
+Este projeto foi desenvolvido como parte do desafio final da disciplina de Algoritmos. Ele simula a montagem de uma torre de resgate em um jogo de sobrevivência, onde o jogador precisa organizar e buscar componentes com base em diferentes estratégias de ordenação e busca.
 
 ---
 
-## 🧠 Nível Mestre: Ordenação e Busca Binária
+## 🎯 Objetivo
 
-### 🆕 Diferenças em relação ao Nível Aventureiro
+Criar um sistema interativo em C que permita:
 
-- Adição do campo **prioridade** aos itens (valores de 1 a 5)
-- Possibilidade de **ordenar** a mochila por **nome**, **tipo** ou **prioridade**
-- Implementação da **busca binária** por nome com verificação de ordenação
+- Cadastrar até 20 componentes da torre de fuga.
+- Ordenar os componentes por diferentes critérios (nome, tipo ou prioridade).
+- Realizar busca binária por um componente-chave.
+- Medir o desempenho dos algoritmos de ordenação (tempo e número de comparações).
+- Exibir os componentes organizados para montagem da torre.
 
-### ⚙️ Funcionalidades
+---
 
-- **Menu de ordenação**: o jogador escolhe o critério desejado
-- Contador de **comparações na ordenação** para análise de desempenho
-- **Busca binária** com validação de pré-requisito (lista deve estar ordenada por nome)
+## 🧱 Estrutura dos Componentes
 
-### 💡 Conceitos Adicionados
+Cada componente possui:
 
-- **Enumeração** (`enum`) para critérios de ordenação
-- **Ordenação com Insertion Sort**
-- **Busca binária** (`binary search`)
-- Uso de **bool** para controle de estado
-- **Análise de desempenho** com contador de comparações
+- `nome` (ex: "chip central")
+- `tipo` (ex: "controle", "suporte", "propulsão")
+- `prioridade` (int de 1 a 10)
 
-### 📥 Entrada
+---
 
-O usuário:
+## ⚙️ Funcionalidades
 
-1. Adiciona itens com prioridade
-2. Ordena os itens
-3. Realiza busca binária pelo nome do item
+- **Cadastro de componentes** com `fgets` para segurança.
+- **Ordenação por:**
+  - Nome → Bubble Sort
+  - Tipo → Insertion Sort
+  - Prioridade → Selection Sort
+- **Busca binária** por nome (após ordenação por nome).
+- **Medição de desempenho**:
+  - Número de comparações
+  - Tempo de execução com `clock()`
+- **Interface interativa** com menu amigável.
 
-### 📤 Saída
+---
 
-- Mochila **ordenada** com base no critério escolhido
-- Exibição dos **dados do item buscado** ou mensagem de erro
-- **Quantidade de comparações** realizadas durante a ordenação
+## 🖥️ Como compilar e executar
+
+### Pré-requisitos:
+- Compilador C (como `gcc`)
+
+### Passos:
+
+```bash
+# 1. Compile o programa
+gcc torre_fuga.c -o torre_fuga
+
+# 2. Execute o programa
+./torre_fuga
 
 
+📦 torre-fuga
+ ┣ 📄 torre_fuga.c         # Código-fonte principal
+ ┗ 📄 README.md            # Este arquivo
 
-## 🏁 Conclusão
+ 🧠 Aprendizados
+Este projeto consolida os seguintes conceitos:
+• 	Implementação de algoritmos clássicos de ordenação.
+• 	Aplicação de busca binária em vetores ordenados.
+• 	Modularização de código em C.
+• 	Análise de desempenho de algoritmos (tempo e comparações).
+• 	Criação de interfaces interativas em terminal.
 
-Ao completar qualquer nível do **Desafio Código da Ilha – Edição Free Fire**, você terá avançado significativamente na programação em **C**, desenvolvendo habilidades práticas de:
+🚀 Autoria
+Desenvolvido por: Thiago Alves Ribeiro da Rosa
+Curso: Análise e Desenvolvimento de Sistemas
+Instituição: Universidade Estácio de Sá
+Desafio proposto pela plataforma SAVA / GitHub Classroom
 
-- Manipulação de **estruturas e arrays**
-- Criação de **menus interativos**
-- Implementação de **buscas e ordenações**
-- **Pensamento modular** e boas práticas de software
 
-Cada nível representa uma missão rumo à **sobrevivência total**.  
-Escolha seu nível, prepare sua mochila... e **boa sorte na ilha!** 🏝️💼🔍
-
-> Equipe de Ensino – MateCheck
